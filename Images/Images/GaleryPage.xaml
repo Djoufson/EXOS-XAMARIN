@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Images.MarkupExtensions"
+             x:Class="Images.GaleryPage">
+    <ContentPage.Content>
+        <Grid
+            Padding="15"
+            BackgroundColor="Black"
+            RowDefinitions="60, *">
+            <Grid
+                Grid.Row="0"
+                ColumnDefinitions="*, 3*, *">
+                <Button
+                    x:Name="Previous"
+                    ImageSource="left"
+                    Grid.Column="0"
+                    BackgroundColor="Transparent"
+                    Clicked="PreviousImage"/>
+                <ActivityIndicator
+                    Color="White"
+                    Grid.Column="1"
+                    IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}"/>
+                <Button
+                    ImageSource="right"
+                    x:Uid="Next"
+                    Grid.Column="2"
+                    Clicked="NextImage"
+                    BackgroundColor="Transparent"/>
+            </Grid>
+            <StackLayout
+
+                Grid.Row="1">
+                <Image
+                    Aspect="AspectFill"
+                    Source="{Binding UriSource}"
+                    x:Name="image"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

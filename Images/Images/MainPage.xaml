@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Images.MarkupExtensions"
+             x:Class="Images.MainPage">
+
+    <AbsoluteLayout>
+        <Image
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            Aspect="AspectFill"
+            Source="{local:EmbededImage ResourceID=Images.Images.background.jpg}"/>
+        
+        <Button
+            ImageSource="clock.png"
+            BackgroundColor="Transparent"
+            />
+        <Button
+            AbsoluteLayout.LayoutBounds=".5,.5"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            BackgroundColor="Blue"
+            CornerRadius="50"
+            Padding="16"
+            Clicked="LoadExercise"
+            Text="See the Galery"
+            TextTransform="None"/>
+    </AbsoluteLayout>
+
+</ContentPage>

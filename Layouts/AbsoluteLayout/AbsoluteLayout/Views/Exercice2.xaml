@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbsoluteLayout.Views.Exercice2">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image
+                x:Name="background"
+                Source="https://th.bing.com/th/id/OIP.UOiapbwFiYoe7v5wkXai2AHaEK?pid=ImgDet"
+                Aspect="AspectFill"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"/>
+            <Label
+                Text="Relax"
+                AbsoluteLayout.LayoutBounds="0.5, 20"
+                AbsoluteLayout.LayoutFlags="XProportional"
+                FontSize="30"
+                />
+            <BoxView
+                BackgroundColor="Black"
+                AbsoluteLayout.LayoutBounds="0, 1, 1, 100"
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                Opacity="0.5"/>
+            <Grid
+                AbsoluteLayout.LayoutBounds="0, 1, 1, 100"
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                ColumnDefinitions="*, *, *">
+                <Label
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    Text="Profile"/>
+                <Label
+                    Grid.Column="1"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Meditate"/>
+                <Label
+                    Grid.Column="2"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Themes"/>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

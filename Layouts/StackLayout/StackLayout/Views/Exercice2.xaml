@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StackLayout.Views.Exercice2">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="White">
+            <Label
+                Text="nyc_photographer"
+                TextColor="Black"
+                Padding="6"
+                FontSize="18"/>
+
+            <Image
+                Source="https://th.bing.com/th/id/OIP.UOiapbwFiYoe7v5wkXai2AHaEK?"
+                Aspect="AspectFill"/>
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    Text="Like"
+                    BackgroundColor ="White"
+                    TextColor="Aqua"/>
+                <Button
+                    Text="Comment"
+                    BackgroundColor ="White"
+                    TextColor="Aqua"/>
+                <Button
+                    Text="Share"
+                    BackgroundColor ="White"
+                    TextColor="Aqua"/>
+            </StackLayout>
+
+            <BoxView
+                BackgroundColor="#f0f0f0"
+                HeightRequest="1"/>
+
+            <Label
+                Text="700 likes"
+                TextColor="Black"
+                Padding="6"
+                FontSize="18"
+                FontAttributes="Bold"
+                />
+            <Label
+                TextColor="Black"
+                FontSize="Body"
+                Padding="6">
+                This is a shot yesterday in Skanor, Sweden, when driving home, from a couple of days of work in Danemark.
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
