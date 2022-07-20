@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lists.MainPage">
+
+    <StackLayout>
+        <SearchBar
+            Placeholder="Search ..."/>
+        <ListView
+            x:Name="list"
+            IsPullToRefreshEnabled="True"
+            Refreshing="Handle_Refreshing"
+            ItemTapped="list_ItemTapped"
+            ItemSelected="list_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Name}"
+                        Detail="{Binding Status}">
+                        <TextCell.ContextActions>
+                            <MenuItem
+                                Text="Call"
+                                Clicked="Call_Clicked"
+                                CommandParameter="{Binding .}"/>
+                            <MenuItem
+                                Text="Delete"
+                                Clicked="Delete_Clicked"
+                                IsDestructive="True"
+                                CommandParameter="{Binding .}"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Text="Exercise"
+            Clicked="Load_Exercise_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
