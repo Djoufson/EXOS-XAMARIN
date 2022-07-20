@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lists.Pages.DescriptionPage"
+             Title="Vaccation">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <BoxView
+                BackgroundColor="Aqua"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, .3"
+                AbsoluteLayout.LayoutFlags="All"/>
+            <StackLayout
+                Padding="15"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                    AbsoluteLayout.LayoutBounds="0, 0.1, 1, 50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    TextColor="Black"
+                    Text="{Binding Location}"
+                    FontSize="30"/>
+            </StackLayout>
+            <StackLayout
+                Padding="15, 0">
+                <Label
+                FontAttributes="Bold"
+                FontSize="25"
+                    TextColor="Black"
+                Text="{Binding Price, StringFormat='{0} $'}"/>
+                <Label
+                    TextColor="Black"
+                FontSize="15"
+                Text="{Binding Date}"/>
+            </StackLayout>
+            <ImageButton
+                Source="{Binding _Source}"
+                CornerRadius="150"
+                HeightRequest="150"
+                WidthRequest="150"
+                AbsoluteLayout.LayoutBounds="0.5, 0.28"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0, .6"
+                Padding="15"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Label
+                    Text="{Binding Description}"/>
+                <Button
+                    Text="Home Page"
+                    Clicked="Home_Clicked"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

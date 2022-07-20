@@ -14,7 +14,10 @@
                 Padding="15">
                 <ListView
                     x:Name="searchesList"
+                    IsPullToRefreshEnabled="True"
+                    Refreshing="searchesList_Refreshing"
                     IsGroupingEnabled="True"
+                    SeparatorColor="Black"
                     ItemSelected="searchesList_ItemSelected"
                     ItemTapped="searchesList_ItemTapped"
                     GroupDisplayBinding="{Binding Title}">
