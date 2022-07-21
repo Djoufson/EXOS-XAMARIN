@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.Pages.SubPages.ContactDetails"
+             Title="{Binding Name}">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20">
+            <ActivityIndicator
+                IsRunning="{Binding Source={x:Reference profilePicture}, Path=IsLoading}"/>
+            <ImageButton
+                x:Name="profilePicture"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="150"
+                CornerRadius="100"
+                Source="{Binding UriSource}"
+                Aspect="AspectFill"
+                Clicked="profilePicture_Clicked"
+                WidthRequest="150"/>
+            <Label 
+                Text="{Binding Name}"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="CenterAndExpand" />
+            <Label
+                Text="{Binding Description}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

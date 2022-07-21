@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.Pages.ContactsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            IconImageSource="plus.png"
+            Order="Secondary"
+            Text="New Contact"
+            Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                IsPullToRefreshEnabled="True"
+                Refreshing="contactsList_Refreshing"
+                x:Name="contactsList"
+                ItemSelected="contactsList_ItemSelected"
+                ItemTapped="contactsList_ItemTapped"
+                ItemsSource="{Binding Contacts}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding Name}"
+                            Detail="{Binding Status}"
+                            >
+                            <TextCell.ContextActions>
+                                <MenuItem
+                                    Text="OPTIONS"
+                                    IsDestructive="True"
+                                    Clicked="Delete_Clicked"
+                                    CommandParameter="{Binding .}"/>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.Pages.AddNewContact">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                Text="Add New Contact"/>
+            <Entry
+                x:Name="NameEntry"
+                Placeholder="Name..."/>
+            <Entry
+                x:Name="StatusEntry"
+                Placeholder="Status..."/>
+            <Editor
+                x:Name="DescriptionEditor"
+                Placeholder="Description..."
+                HeightRequest="200"/>
+            <Button
+                Text="Add"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Submit"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

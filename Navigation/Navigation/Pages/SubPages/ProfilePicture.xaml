@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.Pages.SubPages.ProfilePicture">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ImageButton
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                x:Name="profilePicture"
+                Aspect="AspectFill"
+                Clicked="profilePicture_Clicked"
+                Source="{Binding UriSource}"
+                />
+            <ActivityIndicator
+                AbsoluteLayout.LayoutBounds=".5,.5"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                IsRunning="{Binding Source={x:Reference profilePicture}, Path=IsLoading}"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

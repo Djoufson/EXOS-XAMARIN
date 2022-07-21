@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="Navigation.Pages.Exercise.TabPages.ProfilePage"
+             Title="{ Binding Name }">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal"
+                     Padding="20">
+                <RelativeLayout>
+                    <Label
+                        x:Name="NameLabel"
+                        Text="{ Binding Name }"
+                        FontSize="18"
+                        FontAttributes="Bold"/>
+                    <ic:CircleImage
+                        
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                            ElementName=NameLabel,
+                            Property=Height,
+                            Factor=1,Constant=20}"
+                        x:Name="profilePicture"
+                        Aspect="AspectFill"
+                        Source="{ Binding ImageUrl }"
+                        HeightRequest="100"
+                        WidthRequest="100"/>
+                    <Label
+                        Text="{ Binding Description }"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                            ElementName=profilePicture,
+                            Property=Height,
+                            Factor=1,
+                            Constant=50}"/>
+                </RelativeLayout>
+                <AbsoluteLayout>
+                    <ActivityIndicator
+                        AbsoluteLayout.LayoutBounds=".5,.5"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        IsRunning="{Binding Source={x:Reference profilePicture}, Path=IsLoading}"/>
+                </AbsoluteLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
