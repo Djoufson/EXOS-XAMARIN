@@ -5,12 +5,15 @@
              x:Class="Navigation.Pages.Exercise.TabPages.ActivitiesPage">
     <ContentPage.Content>
         <StackLayout
-            Padding="15">
+            Padding="19
+            ">
             <ListView
                 x:Name="activitiesList"
                 ItemsSource="{ Binding Activities }"
                 HasUnevenRows="True"
-                ItemSelected="Activity_ItemSelected">
+                ItemSelected="Activity_ItemSelected"
+                IsPullToRefreshEnabled="True"
+                Refreshing="activitiesList_Refreshing">
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -21,6 +24,7 @@
                                     HeightRequest="30"
                                     WidthRequest="30"/>
                                 <Label
+                                    Padding="7"
                                     Text="{Binding Description}"
                                     HorizontalOptions="StartAndExpand"
                                     VerticalOptions="Center"/>

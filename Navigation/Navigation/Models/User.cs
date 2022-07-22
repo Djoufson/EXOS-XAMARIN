@@ -11,7 +11,8 @@ namespace Navigation.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; private set; }
-
+        public int Followers { get; set; }
+        public int Following { get; set; }
         public User(string name, string description, string imageUrl)
         {
             Id = Count;

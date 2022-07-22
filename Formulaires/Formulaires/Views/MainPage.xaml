@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Formulaires.ViewsModels.MainPage">
+
+    <StackLayout
+        VerticalOptions="CenterAndExpand">
+        <Label
+            Text="Contacts List"
+            FontSize="20"
+            FontAttributes="Bold"
+            TextTransform="Uppercase"
+            HorizontalTextAlignment="Center"/>
+        <Button
+            x:Name="ContactsButton"
+            Text="Exercise"
+            Clicked="LoadContacts"/>
+    </StackLayout>
+
+</ContentPage>

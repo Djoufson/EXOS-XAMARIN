@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Formulaires.Components"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="Formulaires.ViewsModels.ContactsHomePage">
+    <ContentPage.Content>
+        <AbsoluteLayout
+            Padding="15">
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All">
+                <local:ContactView
+                    x:Name="MyContact"/>
+                <BoxView
+                    BackgroundColor="Gray"
+                    HeightRequest="2"/>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="{Binding IsEmpty}"
+                    Text="No contact available"/>
+                <ListView
+                    x:Name="contactsListView"
+                    IsPullToRefreshEnabled="True"
+                    IsGroupingEnabled="True"
+                    HasUnevenRows="True"
+                    GroupDisplayBinding="{Binding Title}"
+                    GroupShortNameBinding="{Binding ShortTitle}"
+                    ItemsSource="{Binding ContactsGroups}"
+                    ItemSelected="Handle_ContactSelection"
+                    Refreshing="Handle_ContactRefresh">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout
+                                    Padding="8"
+                                    Orientation="Horizontal">
+                                    <ic:CircleImage
+                                        HeightRequest="40"
+                                        WidthRequest="40"
+                                        Aspect="AspectFill"
+                                        Source="{Binding ImageUrl}"/>
+                                    <Label
+                                        Text="{Binding Name}"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="StartAndExpand"
+                                        FontSize="18"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <ImageButton
+                Source="plus.png"
+                Padding="12"
+                AbsoluteLayout.LayoutBounds="1,1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                BackgroundColor="Blue"
+                CornerRadius="50"
+                HeightRequest="50"
+                WidthRequest="50"
+                Clicked="AddContact"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

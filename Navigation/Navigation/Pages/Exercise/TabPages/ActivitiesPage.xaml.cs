@@ -41,5 +41,11 @@ namespace Navigation.Pages.Exercise.TabPages
             activitiesList.SelectedItem = null;
             await Navigation.PushAsync(new ProfilePage(users[activity.UserId]));
         }
+
+        private void activitiesList_Refreshing(object sender, EventArgs e)
+        {
+            Activities = activities;
+            activitiesList.EndRefresh();
+        }
     }
 }

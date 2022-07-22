@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Formulaires.Components"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="Formulaires.ViewsModels.ContactPage"
+             Title="{Binding _Title}">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="15">
+            <ic:CircleImage
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="Gray"
+                WidthRequest="100"
+                HeightRequest="100"/>
+            <Picker
+                Title="Save to which account">
+                <Picker.Items>
+                    <x:String>USIM</x:String>
+                    <x:String>Google</x:String>
+                    <x:String>Phone</x:String>
+                </Picker.Items>
+            </Picker>
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Name">
+                        <EntryCell 
+                            x:Name="NameEntry"
+                            Placeholder="Name ..."
+                            Text="{Binding Name}"/>
+                        <EntryCell 
+                            Placeholder="Pseudo ..."
+                            Text="{Binding Pseudo}"/>
+                    </TableSection>
+                    <TableSection Title="Contacts">
+                        <EntryCell 
+                            x:Name="PhoneEntry"
+                            Placeholder="Phone Number"
+                            Keyboard="Telephone"/>
+                        <EntryCell 
+                            x:Name="additionalPhone"
+                            Placeholder="Additional Phone Number"
+                            Keyboard="Telephone"/>
+                    </TableSection>
+                    <TableSection
+                        Title="Professional">
+                        <EntryCell 
+                            Placeholder="Mail"
+                            Keyboard="Email"
+                            Text="{Binding Mail}"/>
+                        <ViewCell>
+                            <Button
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                CornerRadius="50"
+                                TextColor="White"
+                                BackgroundColor="Blue"
+                                x:Name="SubmitButton"
+                                Text="Add Contact"
+                                TextTransform="None"
+                                Clicked="SubmitClicked"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
