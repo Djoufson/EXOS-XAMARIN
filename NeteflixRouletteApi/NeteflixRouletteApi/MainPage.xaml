@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeteflixRouletteApi.MainPage">
+
+    <StackLayout>
+        <SearchBar
+            Text="{Binding ActorName}"
+            Placeholder="Search by actor ..."
+            TextChanged="SearchBar_TextChanged"/>
+        <ListView
+            x:Name="moviesList"
+            ItemsSource="{Binding Movies}"
+            ItemSelected="ListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell
+                        ImageSource="{Binding ImageSource}"
+                        Text="{Binding Title}"
+                        Detail="{Binding ReleaseDate}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeteflixRouletteApi.Views.MovieDetailsPage"
+             Title="{Binding _Movie.Title}">
+    <RelativeLayout>
+        <ActivityIndicator
+            IsRunning="{Binding Source={x:Reference banner}, Path=IsLoading}"/>
+        <Image
+            x:Name="banner"
+            Aspect="AspectFill"
+            Source="{Binding _Movie.ImageSource}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Property=Height, 
+            Factor=0.4}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression 
+            Property=Width}"/>
+        <Frame
+            Padding="15"
+            HasShadow="False"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=banner,
+            Property=Height,Constant=15}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Property=Width}">
+
+            <StackLayout>
+                <Label
+                    Text="{Binding _Movie.Title}"
+                    FontSize="30"/>
+                <Label
+                    Text="{Binding _Movie.ReleaseDate}"
+                    FontSize="15"/>
+                <Label
+                    Text="{Binding _Movie.Description}"
+                    FontSize="18"/>
+                <Image
+                    Aspect="AspectFill"
+                    Source="{Binding _Movie.ImageSource}"/>
+            </StackLayout>
+        </Frame>
+    </RelativeLayout>
+</ContentPage>
